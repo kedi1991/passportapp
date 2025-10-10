@@ -1,5 +1,15 @@
 package com.udemy.solid.passportapp.entity;
 
-public class Passport {
+import java.time.LocalDate;
 
+public class Passport {
+	/**
+	 * Our Passport class
+	 */
+
+	private Applicant applicant;
+	private String PassportNumber;
+	private LocalDate issueDate;
+	private LocalDate expiryDate;
+	
 }
