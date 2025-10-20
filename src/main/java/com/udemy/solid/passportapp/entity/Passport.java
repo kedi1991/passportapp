@@ -7,64 +7,52 @@ import com.udemy.solid.passportapp.services.Validity;
 /**
  * Our Passport class
  */
-public abstract class Passport {
+public class Passport {
 
 	private Applicant applicant;
 	private String PassportNumber;
 	private LocalDate issueDate;
 	private LocalDate expiryDate;
-	private Validity validy;
-	
-	public Passport(Applicant applicant, String passportNumber, LocalDate issueDate, LocalDate expiryDate,
-			Validity validy) {
+	private Validity validity;
+	public Passport(Applicant applicant, String passportNumber,
+			Validity validity) {
 		super();
 		this.applicant = applicant;
 		PassportNumber = passportNumber;
 		this.issueDate = issueDate;
 		this.expiryDate = expiryDate;
-		this.validy = validy;
+		this.validity = validity;
 	}
-
 	public Applicant getApplicant() {
 		return applicant;
 	}
-
 	public void setApplicant(Applicant applicant) {
 		this.applicant = applicant;
 	}
-
 	public String getPassportNumber() {
 		return PassportNumber;
 	}
-
 	public void setPassportNumber(String passportNumber) {
 		PassportNumber = passportNumber;
 	}
-
 	public LocalDate getIssueDate() {
 		return issueDate;
 	}
-
 	public void setIssueDate(LocalDate issueDate) {
 		this.issueDate = issueDate;
 	}
-
 	public LocalDate getExpiryDate() {
 		return expiryDate;
 	}
-
 	public void setExpiryDate(LocalDate expiryDate) {
 		this.expiryDate = expiryDate;
 	}
-
-	public Validity getValidy() {
-		return validy;
+	public Validity getValidity() {
+		return validity;
 	}
-
-	public void setValidy(Validity validy) {
-		this.validy = validy;
+	public void setValidity(Validity validity) {
+		this.validity = validity;
 	}
-	
 	
 	
 	
