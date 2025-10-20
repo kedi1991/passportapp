@@ -2,7 +2,7 @@ package com.udemy.solid.passportapp.entity;
 
 import java.time.LocalDate;
 
-public class Passport {
+public abstract class Passport {
 	/**
 	 * Our Passport class
 	 */
