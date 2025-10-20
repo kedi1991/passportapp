@@ -7,21 +7,22 @@ import com.udemy.solid.passportapp.services.Validity;
 /**
  * Our Passport class
  */
-public class Passport {
+public abstract class Passport {
 
 	private Applicant applicant;
-	private String PassportNumber;
+	private String passportNumber;
 	private LocalDate issueDate;
 	private LocalDate expiryDate;
 	private Validity validity;
 	public Passport(Applicant applicant, String passportNumber,
-			Validity validity) {
+			String type) {
 		super();
 		this.applicant = applicant;
-		PassportNumber = passportNumber;
-		this.issueDate = issueDate;
-		this.expiryDate = expiryDate;
-		this.validity = validity;
+		this.passportNumber = passportNumber;
+
+		this.validity = new Validity(type);
+		this.issueDate = this.validity.getIssueDate();
+		this.expiryDate = this.validity.getExpiryDate();
 	}
 	public Applicant getApplicant() {
 		return applicant;
@@ -30,10 +31,10 @@ public class Passport {
 		this.applicant = applicant;
 	}
 	public String getPassportNumber() {
-		return PassportNumber;
+		return passportNumber;
 	}
 	public void setPassportNumber(String passportNumber) {
-		PassportNumber = passportNumber;
+		passportNumber = passportNumber;
 	}
 	public LocalDate getIssueDate() {
 		return issueDate;
@@ -53,7 +54,5 @@ public class Passport {
 	public void setValidity(Validity validity) {
 		this.validity = validity;
 	}
-	
-	
 	
 }
