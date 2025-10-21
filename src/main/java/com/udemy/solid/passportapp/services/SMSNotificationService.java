@@ -15,8 +15,8 @@ public class SMSNotificationService  implements Notifications{
 	}
 
 	@Override
-	public NotificationRequest send() {
-		return new NotificationRequest(NotificationChannel.SMS, "sms@yahoo.com", "Sending message using the Vodafone API");
+	public NotificationRequest send(String recipient, String message) {
+		return new NotificationRequest(NotificationChannel.SMS, recipient, message);
 	}
 
 }

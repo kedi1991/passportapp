@@ -16,9 +16,9 @@ public class EmailNotificationsService implements Notifications{
 	}
 
 	@Override
-	public NotificationRequest send() {
+	public NotificationRequest send(String recipient, String message) {
 		//send the email message		
-		return new NotificationRequest(NotificationChannel.EMAIL, "abcd@gmail.com", "Hello from the Java SMTP Library.");
+		return new NotificationRequest(NotificationChannel.EMAIL, recipient, message);
 	}
 
 }

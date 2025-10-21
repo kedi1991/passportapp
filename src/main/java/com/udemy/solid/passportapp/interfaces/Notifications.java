@@ -6,6 +6,6 @@ import com.udemy.solid.passportapp.entity.NotificationRequest;
 public interface Notifications {
 
 	NotificationChannel supports();
-	NotificationRequest send();
+	NotificationRequest send(String recipient, String message);
 	
 }

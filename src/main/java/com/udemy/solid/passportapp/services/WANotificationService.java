@@ -15,7 +15,7 @@ public class WANotificationService  implements Notifications{
 	}
 
 	@Override
-	public NotificationRequest send() {
-		return new NotificationRequest(NotificationChannel.WA, "wa@yahoo.com", "Sending message using the WhatsApp API");
+	public NotificationRequest send(String recipient, String message) {
+		return new NotificationRequest(NotificationChannel.WA, recipient, message);
 	}
 }

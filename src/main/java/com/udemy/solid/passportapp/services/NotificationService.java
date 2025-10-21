@@ -18,10 +18,10 @@ public class NotificationService {
 		this.notifications = notifications;
 	}
 	
-	public NotificationRequest send(String channel) {
+	public NotificationRequest send(String channel, String recipient, String message) {
 		for (Notifications notification: notifications) {
 			if (notification.supports() == NotificationChannel.valueOf(channel)) {
-				return notification.send();
+				return notification.send(recipient, message);
 			}
 		}
 		throw new IllegalArgumentException("Not supported: " + channel);
